@@ -12,7 +12,7 @@ int main(int arc, char** argv) {
     }
     else {
 
-        SDL_CreateWindow(
+        auto window = SDL_CreateWindow(
             "Dante v0.0.1",
             SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
             SCREEN_WIDTH, SCREEN_HEIGHT,
@@ -20,6 +20,8 @@ int main(int arc, char** argv) {
         );
 
         SDL_Delay(2000);
+
+        SDL_DestroyWindow(window);
     }
 
     return 0;
