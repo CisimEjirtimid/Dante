@@ -13,7 +13,7 @@ int main(int arc, char** argv) {
     else {
 
         SDL_CreateWindow(
-            "SDL2 Demo",
+            "Dante v0.0.1",
             SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
             SCREEN_WIDTH, SCREEN_HEIGHT,
             SDL_WINDOW_SHOWN
