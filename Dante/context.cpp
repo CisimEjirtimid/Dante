@@ -5,12 +5,20 @@ namespace dante
 {
     namespace constants
     {
-        static constexpr int SCREEN_WIDTH = 800;
-        static constexpr int SCREEN_HEIGHT = 600;
+        static constexpr size_t SCREEN_WIDTH = 800;
+        static constexpr size_t SCREEN_HEIGHT = 600;
     }
 
-    Context::Context()
+    Context::Context(int argc, char** argv)
     {
+        _parser.options(
+            command_line::Opt<size_t>{ "w, width", "Window width", constants::SCREEN_WIDTH },
+            command_line::Opt<size_t>{ "h, height", "Window height", constants::SCREEN_HEIGHT });
+
+        auto result = _parser.parse(argc, argv);
+
+        log->info(_parser.help());
+
         spdlog::set_pattern("[%T.%e][%n][Tid: %t][%^%l%$]: %v");
 
 #ifdef _DEBUG
@@ -26,10 +34,13 @@ namespace dante
             throw std::runtime_error(message);
         }
 
+        auto width = result.get<size_t>("width");
+        auto height = result.get<size_t>("height");
+
         _window.reset(SDL_CreateWindow(
             "Dante v0.0.1",
             SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-            constants::SCREEN_WIDTH, constants::SCREEN_HEIGHT,
+            width, height,
             SDL_WINDOW_SHOWN));
 
         log->info("Context (Log, Window) created");
