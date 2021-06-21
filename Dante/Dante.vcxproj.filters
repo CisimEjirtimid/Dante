@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\dx">
+      <UniqueIdentifier>{2337565a-d70b-404e-a76e-466368c19ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sdl">
+      <UniqueIdentifier>{8390f062-ab0c-494b-8a16-5cb847a75313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sdl">
+      <UniqueIdentifier>{e694eef6-e289-47ba-8bc2-fd8d3302cdf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dx">
+      <UniqueIdentifier>{e1766309-4e56-429d-b7a7-90f3fed10d70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -24,6 +36,12 @@
     <ClCompile Include="command_line_parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sdl\window.cpp">
+      <Filter>Source Files\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="dx\init.cpp">
+      <Filter>Source Files\dx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="context.h">
@@ -31,6 +49,15 @@
     </ClInclude>
     <ClInclude Include="command_line_parser.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dx\common.h">
+      <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="sdl\window.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="dx\init.h">
+      <Filter>Header Files\dx</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

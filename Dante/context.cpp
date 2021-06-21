@@ -1,5 +1,6 @@
 #include "context.h"
-#include "fmt/format.h"
+#include "dx/init.h"
+#include <fmt/format.h>
 
 namespace dante
 {
@@ -37,13 +38,11 @@ namespace dante
         auto width = result.get<size_t>("width");
         auto height = result.get<size_t>("height");
 
-        _window.reset(SDL_CreateWindow(
-            "Dante v0.0.1",
-            SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-            width, height,
-            SDL_WINDOW_SHOWN));
+        _window = sdl::WindowPtr{ "Dante v0.0.1" , width, height };
 
         log->info("Context (Log, Window) created");
+
+        dx::init(_window.hwnd());
     }
 
     Context::~Context()
