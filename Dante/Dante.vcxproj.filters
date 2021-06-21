@@ -39,7 +39,7 @@
     <ClCompile Include="sdl\window.cpp">
       <Filter>Source Files\sdl</Filter>
     </ClCompile>
-    <ClCompile Include="dx\init.cpp">
+    <ClCompile Include="dx\device_resources.cpp">
       <Filter>Source Files\dx</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,7 +56,7 @@
     <ClInclude Include="sdl\window.h">
       <Filter>Header Files\sdl</Filter>
     </ClInclude>
-    <ClInclude Include="dx\init.h">
+    <ClInclude Include="dx\device_resources.h">
       <Filter>Header Files\dx</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,4 @@
 #include "context.h"
-#include "dx/init.h"
 #include <fmt/format.h>
 
 namespace dante
@@ -22,7 +21,7 @@ namespace dante
 
         spdlog::set_pattern("[%T.%e][%n][Tid: %t][%^%l%$]: %v");
 
-#ifdef _DEBUG
+#if defined(_DEBUG)
         spdlog::set_level(spdlog::level::debug);
 #else
         spdlog::set_level(spdlog::level::warn);
@@ -42,7 +41,7 @@ namespace dante
 
         log->info("Context (Log, Window) created");
 
-        dx::init(_window.hwnd());
+        _deviceResources = dx::DeviceResources{ _window.hwnd() };
     }
 
     Context::~Context()
