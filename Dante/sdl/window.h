@@ -14,5 +14,12 @@ namespace dante::sdl
         WindowPtr(const std::string& title, size_t width, size_t height);
 
         HWND hwnd();
+
+        bool pollEvents();
+
+        bool shouldClose() const;
+
+    private:
+        bool _shouldClose = false;
     };
 }

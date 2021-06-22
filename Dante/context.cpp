@@ -37,11 +37,9 @@ namespace dante
         auto width = result.get<size_t>("width");
         auto height = result.get<size_t>("height");
 
-        _window = sdl::WindowPtr{ "Dante v0.0.1" , width, height };
-
         log->info("Context (Log, Window) created");
 
-        _deviceResources = dx::DeviceResources{ _window.hwnd() };
+        //_deviceResources = dx::DeviceResources{ _window.hwnd() };
     }
 
     Context::~Context()

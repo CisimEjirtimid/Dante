@@ -88,6 +88,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="application.cpp" />
     <ClCompile Include="command_line_parser.cpp" />
     <ClCompile Include="context.cpp" />
     <ClCompile Include="dx\device_resources.cpp" />
@@ -95,11 +96,13 @@
     <ClCompile Include="sdl\window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="application.h" />
     <ClInclude Include="command_line_parser.h" />
     <ClInclude Include="context.h" />
     <ClInclude Include="dx\common.h" />
     <ClInclude Include="dx\device_resources.h" />
     <ClInclude Include="sdl\window.h" />
+    <ClInclude Include="timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

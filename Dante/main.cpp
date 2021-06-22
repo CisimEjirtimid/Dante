@@ -1,4 +1,5 @@
 #include "context.h"
+#include "application.h"
 
 int main(int argc, char** argv)
 {
@@ -10,7 +11,8 @@ int main(int argc, char** argv)
         context.log->error("IO error");
         context.log->critical("FATAL ERROR");
 
-        SDL_Delay(5000);
+        dante::Application app(context);
+        app.run();
     }
     catch (...)
     {

@@ -42,6 +42,9 @@
     <ClCompile Include="dx\device_resources.cpp">
       <Filter>Source Files\dx</Filter>
     </ClCompile>
+    <ClCompile Include="application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="context.h">
@@ -58,6 +61,12 @@
     </ClInclude>
     <ClInclude Include="dx\device_resources.h">
       <Filter>Header Files\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

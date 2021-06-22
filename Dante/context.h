@@ -9,7 +9,6 @@ namespace dante
 {
     class Context
     {
-        sdl::WindowPtr _window;
         dx::DeviceResources _deviceResources;
 
         command_line::Parser _parser{ "Dante", "Direct3D 12 Capabilities Showroom" };

@@ -23,4 +23,27 @@ namespace dante::sdl
         SDL_GetWindowWMInfo(get(), &info);
         return info.info.win.window;
     }
+
+    bool WindowPtr::pollEvents()
+    {
+        SDL_Event ev;
+        while (SDL_PollEvent(&ev)) {
+            switch (ev.type) {
+            case SDL_WINDOWEVENT: {
+                switch (ev.window.event) {
+                case SDL_WINDOWEVENT_CLOSE: {
+                    _shouldClose = true;
+                    break;
+                }
+                }
+                break;
+            }
+            }
+        }
+        return false;
+    }
+
+    bool WindowPtr::shouldClose() const {
+        return _shouldClose;
+    }
 }
