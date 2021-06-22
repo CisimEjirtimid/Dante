@@ -1,14 +1,15 @@
 #pragma once
 
 #include <chrono>
+#include <type_traits>
 
 namespace dante
 {
-    template <typename TimeUnit>
     class Timer
     {
     public:
-        using TimeRatio = TimeUnit;
+        using ClockType = std::chrono::steady_clock;
+
         Timer();
         ~Timer() = default;
 
@@ -16,30 +17,32 @@ namespace dante
         Timer& operator=(const Timer& other) = default;
         Timer& operator=(Timer&& other) = default;
 
-        inline double getElapsedTime();
-        inline double restart();
+        template <typename TimeUnit = std::chrono::duration<double>>
+        inline TimeUnit::rep getElapsedTime();
+
+        template <typename TimeUnit = std::chrono::duration<double>>
+        inline TimeUnit::rep restart();
 
     private:
-        std::chrono::time_point<std::chrono::high_resolution_clock> _prevTimePoint;
+        std::chrono::time_point<ClockType> _prevTimePoint;
     };
 
-    template <typename TimeUnit>
-    Timer<TimeUnit>::Timer()
-        : _prevTimePoint(std::chrono::high_resolution_clock::now())
+    Timer::Timer()
+        : _prevTimePoint(ClockType::now())
     {
     }
 
     template <typename TimeUnit>
-    double Timer<TimeUnit>::getElapsedTime()
+    TimeUnit::rep Timer::getElapsedTime()
     {
-        return std::chrono::duration<double, TimeUnit>(std::chrono::high_resolution_clock::now() - _prevTimePoint).count();
+        return TimeUnit(ClockType::now() - _prevTimePoint).count();
     }
 
     template <typename TimeUnit>
-    double Timer<TimeUnit>::restart()
+    TimeUnit::rep Timer::restart()
     {
-        auto current = std::chrono::high_resolution_clock::now();
-        double elapsed = std::chrono::duration<double, TimeUnit>(current - _prevTimePoint).count();
+        const auto current = ClockType::now();
+        const double elapsed = TimeUnit(current - _prevTimePoint).count();
         _prevTimePoint = current;
 
         return elapsed;

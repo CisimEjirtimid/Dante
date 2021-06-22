@@ -27,11 +27,11 @@ namespace dante
     void Application::run() {
         logger->info("Dante is up and running!");
 
-        Timer<std::milli> updateTimer;
+        Timer updateTimer;
         double timeSinceLastUpdate = 0.0;
         while (!_window.shouldClose())
         {
-            const double timeDelta = updateTimer.restart() / 1000.0;
+            const double timeDelta = updateTimer.restart<>();
             timeSinceLastUpdate += timeDelta;
 
             handleEvents();
