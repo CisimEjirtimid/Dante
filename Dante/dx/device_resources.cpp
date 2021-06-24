@@ -41,5 +41,16 @@ namespace dante::dx
 
         if (qualityLevels.NumQualityLevels < 1)
             throw std::exception{ "Unexpected MSAA quality level!" };
+
+        D3D12_COMMAND_QUEUE_DESC queue
+        {
+            .Type = D3D12_COMMAND_LIST_TYPE_DIRECT,
+            .Flags = D3D12_COMMAND_QUEUE_FLAG_NONE,
+        };
+        hr = _device->CreateCommandQueue(&queue, IID_PPV_ARGS(&_commandQueue));
+        hr = _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&_commandAllocator));
+        hr = _device->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocator.Get(), nullptr, IID_PPV_ARGS(&_commandList));
+
+        _commandList->Close();
     }
 }

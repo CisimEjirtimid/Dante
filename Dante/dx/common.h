@@ -22,6 +22,7 @@ namespace dante::dx
 
         using CommandQueuePtr = wrl::ComPtr<ID3D12CommandQueue>;
         using CommandListPtr = wrl::ComPtr<ID3D12CommandList>;
+        using GraphicsCommandListPtr = wrl::ComPtr<ID3D12GraphicsCommandList>;
         using CommandAllocatorPtr = wrl::ComPtr<ID3D12CommandAllocator>;
 
         using FencePtr = wrl::ComPtr<ID3D12Fence>;

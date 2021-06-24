@@ -20,6 +20,10 @@ namespace dante::dx
         d3d::DevicePtr _device;
         d3d::FencePtr _fence;
 
+        d3d::CommandQueuePtr _commandQueue;
+        d3d::CommandAllocatorPtr _commandAllocator;
+        d3d::GraphicsCommandListPtr _commandList;
+
     public:
         DeviceResources();
         DeviceResources(HWND hwnd);
