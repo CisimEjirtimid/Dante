@@ -12,13 +12,16 @@ namespace dante::dx
     namespace dxgi
     {
         using Factory4Ptr = wrl::ComPtr<IDXGIFactory4>;
+        using SwapChainPtr = wrl::ComPtr<IDXGISwapChain>;
+        using SwapChain4Ptr = wrl::ComPtr<IDXGISwapChain4>;
     }
 
     namespace d3d
     {
         using DebugPtr = wrl::ComPtr<ID3D12Debug>;
+        using InfoQueuePtr = wrl::ComPtr<ID3D12InfoQueue>;
 
-        using DevicePtr = wrl::ComPtr<ID3D12Device>;
+        using Device8Ptr = wrl::ComPtr<ID3D12Device8>;
 
         using CommandQueuePtr = wrl::ComPtr<ID3D12CommandQueue>;
         using CommandListPtr = wrl::ComPtr<ID3D12CommandList>;
@@ -26,5 +29,7 @@ namespace dante::dx
         using CommandAllocatorPtr = wrl::ComPtr<ID3D12CommandAllocator>;
 
         using FencePtr = wrl::ComPtr<ID3D12Fence>;
+
+        using DescriptorHeapPtr = wrl::ComPtr<ID3D12DescriptorHeap>;
     }
 }

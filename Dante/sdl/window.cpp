@@ -1,4 +1,5 @@
 #include "window.h"
+#include "exception.h"
 
 namespace dante::sdl
 {
@@ -20,7 +21,10 @@ namespace dante::sdl
     HWND WindowPtr::hwnd()
     {
         SDL_SysWMinfo info;
-        SDL_GetWindowWMInfo(get(), &info);
+        SDL_VERSION(&info.version);
+
+        ThrowIfFailed(SDL_GetWindowWMInfo(get(), &info));
+
         return info.info.win.window;
     }
 

@@ -53,7 +53,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CONSOLE;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Ext/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -72,7 +72,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CONSOLE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Ext/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -91,7 +91,7 @@
     <ClCompile Include="application.cpp" />
     <ClCompile Include="command_line_parser.cpp" />
     <ClCompile Include="context.cpp" />
-    <ClCompile Include="dx\device_resources.cpp" />
+    <ClCompile Include="dx\renderer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sdl\window.cpp" />
   </ItemGroup>
@@ -100,7 +100,9 @@
     <ClInclude Include="command_line_parser.h" />
     <ClInclude Include="context.h" />
     <ClInclude Include="dx\common.h" />
-    <ClInclude Include="dx\device_resources.h" />
+    <ClInclude Include="dx\exception.h" />
+    <ClInclude Include="dx\renderer.h" />
+    <ClInclude Include="sdl\exception.h" />
     <ClInclude Include="sdl\window.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>

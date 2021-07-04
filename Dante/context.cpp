@@ -34,12 +34,10 @@ namespace dante
             throw std::runtime_error(message);
         }
 
-        auto width = result.get<size_t>("width");
-        auto height = result.get<size_t>("height");
+        width = result.get<size_t>("width");
+        height = result.get<size_t>("height");
 
         log->info("Context (Log, Window) created");
-
-        //_deviceResources = dx::DeviceResources{ _window.hwnd() };
     }
 
     Context::~Context()

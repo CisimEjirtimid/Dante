@@ -1,4 +1,5 @@
 #include "application.h"
+#include "context.h"
 #include "timer.h"
 
 #include <spdlog/spdlog.h>
@@ -15,7 +16,9 @@ namespace dante
     {
         // do something with context (e.g. get command line args with a nice interface, query device capabilities, check for some extensions etc)
 
-        _window = sdl::WindowPtr{ "Dante v0.0.1" , 512, 512 };
+        _window = sdl::WindowPtr{ "Dante v0.0.1", context.width, context.height };
+
+        _renderer = dx::Renderer{ _window.hwnd() };
     }
 
     Application::~Application()

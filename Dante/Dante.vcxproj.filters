@@ -39,7 +39,7 @@
     <ClCompile Include="sdl\window.cpp">
       <Filter>Source Files\sdl</Filter>
     </ClCompile>
-    <ClCompile Include="dx\device_resources.cpp">
+    <ClCompile Include="dx\renderer.cpp">
       <Filter>Source Files\dx</Filter>
     </ClCompile>
     <ClCompile Include="application.cpp">
@@ -59,7 +59,7 @@
     <ClInclude Include="sdl\window.h">
       <Filter>Header Files\sdl</Filter>
     </ClInclude>
-    <ClInclude Include="dx\device_resources.h">
+    <ClInclude Include="dx\renderer.h">
       <Filter>Header Files\dx</Filter>
     </ClInclude>
     <ClInclude Include="application.h">
@@ -67,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="timer.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sdl\exception.h">
+      <Filter>Header Files\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="dx\exception.h">
+      <Filter>Header Files\dx</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

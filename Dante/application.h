@@ -1,16 +1,12 @@
 #pragma once
 
 #include <memory>
-
 #include "sdl/window.h"
+#include "dx/renderer.h"
 
 namespace dante
 {
     class Context;
-    class Renderer
-    {
-        // TODO and not here..
-    };
 
     class Application
     {
@@ -31,6 +27,7 @@ namespace dante
         void render();
 
         sdl::WindowPtr _window;
-        std::unique_ptr<Renderer> _renderer;
+        dx::Renderer _renderer;
+
     };
 }
